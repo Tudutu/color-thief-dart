@@ -268,7 +268,8 @@ class CMap {
 
   nearest(color) {
     var vboxes = this.vboxes;
-    double? d1, d2, pColor;
+    double? d1, d2;
+    List<int>? pColor;
 
     for (var i = 0; i < vboxes.size(); i++) {
       d2 = math.sqrt(math.pow(color[0] - vboxes.peek(i).color[0], 2) +

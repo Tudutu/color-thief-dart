@@ -59,11 +59,12 @@ List<int> fromRGBtoHSV(List<int> list) {
 List<int> fromHSVtoRGB(List<int> list) {
   assert(list.length == 3);
 
-  var h = list[0];
+  var h = list[0] % 360;
   var s = list[1] / 100;
   var v = list[2] / 100;
-  var h1 = (h ~/ 60) % 6;
-  var f = h / 60 - h1;
+  var hSection = h / 60;
+  var h1 = hSection.floor() % 6;
+  var f = hSection - h1;
   var p = v * (1 - s);
   var q = v * (1 - f *s );
   var t = v * (1 - (1 - f) * s);
