@@ -11,4 +11,9 @@ void main() {
   test('utils.fromHSVtoRGB', () {
     expect(fromHSVtoRGB([90, 90, 90]).toString(), [126, 230, 23].toString());
   });
+
+  test('utils.fromHSVtoRGB h 360 should equal h 0', () {
+    expect(fromHSVtoRGB([360, 100, 100]).toString(),
+        fromHSVtoRGB([0, 100, 100]).toString());
+  });
 }
